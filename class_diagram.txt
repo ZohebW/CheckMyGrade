@@ -1,0 +1,53 @@
++------------------+          +------------------+          +------------------+
+|    LoginUser     |          |  CheckMyGrade    |          |   DataManager   |
++------------------+          +------------------+          +------------------+
+| - email_id       |          | - data_manager   |<>--------| - students      |
+| - password       |          | - current_user   |          | - courses       |
+| - role           |          +------------------+          | - professors    |
+| - key            |          | + login()        |          | - grades        |
+| - cipher_suite   |          | + show_menu()    |          | - users         |
++------------------+          | + add_student()  |          +------------------+
+| + login()        |          | + add_course()   |          | + load_data()   |
+| + logout()       |          | + add_professor()|          | + save_data()   |
+| + change_password|          | + search_records()|         | + search_students()|
+| + encrypt_password|         | + sort_records() |          | + sort_students() |
+| + decrypt_password|         | + display_reports()|        | + get_avg_score() |
++------------------+          +------------------+          | + get_median_score()|
+                                                            | + generate_reports()|
+                                                            +------------------+
+                                                                    ^
+                                                                    |
+                    +---------------+-------------+------------------+
+                    |               |             |                  |
+        +-----------v----+  +------v-------+  +--v-------------+  +-v------------+
+        |   Student      |  |   Course     |  |   Professor    |  |   Grades     |
+        +----------------+  +--------------+  +----------------+  +---------------+
+        | - email_address|  | - course_id  |  | - professor_id |  | - grade_id   |
+        | - first_name   |  | - course_name|  | - name         |  | - grade      |
+        | - last_name    |  | - description|  | - rank         |  | - marks_range|
+        | - course_id    |  +--------------+  | - course_id    |  +---------------+
+        | - grades       |  | + display_courses()|+----------------+  | + display_grade_report()|
+        | - marks        |  | + add_new_course()|| + professors_details()|+ add_grade()  |
+        +----------------+  | + delete_course()|  | + add_new_professor()|| + delete_grade()|
+        | + display_records()|+--------------+  | + delete_professor()|| + modify_grade()|
+        | + add_new_student()|                  | + modify_professor()| +---------------+
+        | + delete_student() |                  | + show_course_details()|
+        | + check_my_grades()|                  +----------------+
+        | + update_record()  |
+        | + check_my_marks() |
+        +----------------+
+
+Class Relationships:
+- CheckMyGrade HAS-A DataManager (Composition)
+- DataManager HAS-A collection of Student, Course, Professor, Grades, and LoginUser (Aggregation)
+- Student HAS-A reference to Course via course_id (Association)
+- Professor HAS-A reference to Course via course_id (Association)
+- Student HAS-A reference to Grades via grades attribute (Association)
+
+Design Patterns Used:
+1. Singleton Pattern: DataManager is effectively a singleton as it manages all data access
+2. Repository Pattern: DataManager acts as a repository for data storage and retrieval
+3. MVC Pattern: 
+   - Model: Student, Course, Professor, Grades, LoginUser
+   - View: Display methods in each class and the CheckMyGrade UI methods
+   - Controller: DataManager and main application logic in CheckMyGrade 

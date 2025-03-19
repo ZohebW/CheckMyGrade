@@ -1,0 +1,11 @@
+email_address,first_name,last_name,course_id,grades,marks
+student1@mycsu.edu,John,Doe,DATA200,A,95
+student2@mycsu.edu,Jane,Smith,DATA200,B,85
+student3@mycsu.edu,Michael,Johnson,CS101,A,92
+student4@mycsu.edu,Emily,Davis,CS101,C,75
+student5@mycsu.edu,David,Wilson,MATH101,B,88
+student6@mycsu.edu,Sarah,Brown,MATH101,A,94
+student7@mycsu.edu,Robert,Martinez,ENG101,C,78
+student8@mycsu.edu,Jennifer,Taylor,ENG101,B,83
+student9@mycsu.edu,William,Anderson,PHYS101,A,97
+student10@mycsu.edu,Lisa,Thomas,PHYS101,D,65

@@ -1,0 +1,6 @@
+professor_id,name,rank,course_id
+micheal@mycsu.edu,Michael John,Senior Professor,DATA200
+jane@mycsu.edu,Jane Smith,Associate Professor,CS101
+robert@mycsu.edu,Robert Johnson,Assistant Professor,MATH101
+emily@mycsu.edu,Emily Davis,Senior Professor,ENG101
+david@mycsu.edu,David Wilson,Professor,PHYS101
